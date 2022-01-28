@@ -1,20 +1,27 @@
 <html>
-    <head>
-<script>
-    console.log("yooooo")
-    var temperatursCelcius = [32, 4, 77, 32312]
-    //TODO create a loop that calculates the celcius in Fahrenheit and in Kelvin
-    //Write your code here/below this line
-    // for loop for(start, condition, incrementor)
-    for(var i=0; i<temperatursCelcius.length; i++){
-        //console.log(i)
-        console.log(temperatursCelcius[i])
-    }
-    console.log("######")
-    for(var i = 50; i > 0.1; i = i / 2){
-        console.log("IEHHHH is " + i)
-    }
-</script>
-    </head>
-    <body></body>
+
+<head>
+    <script>
+        var temperatursCelcius = [32, 4, 77, -62, -2222293.15]
+        // // for loop for(start, condition, incrementor)
+
+        //TODO create a loop that calculates the celcius in Fahrenheit and in Kelvin
+
+        // C => F = C*1.8+32
+        // C => K = C+273,15
+        for (var i = 1; i < temperatursCelcius.length; i++) {
+            console.log("C: " + temperatursCelcius[i])
+            console.log("F: " + Number(temperatursCelcius[i] * 1.8 + 32))
+            //TODO if result is lower than 0, return 0
+            var kalvin = Number(temperatursCelcius[i] + 273.15)
+            if (kalvin < 0) {
+                kalvin = 0
+            }
+            console.log("K: " + kalvin)
+        }
+    </script>
+</head>
+
+<body></body>
+
 </html>
