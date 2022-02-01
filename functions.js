@@ -1,13 +1,34 @@
-console.log("YYYY")
-function product(x,y){
-    return x * y
-}
-console.log(product(444, 2))
-console.log(product(2, 8))
-console.log(product(444, 22222))
-console.log(product(4222244, -7))
+// console.log("YYYY")
+// function product(x,y){
+//     return x * y
+// }
+// console.log(product(444, 2))
+// console.log(product(2, 8))
+// console.log(product(444, 22222))
+// console.log(product(4222244, -7))
 
-const power = (x,y) => {
-  return  Math.pow(x,y)
+// const power = (x,y) => {
+//   return  Math.pow(x,y)
+// }
+// console.log(power(2,8))
+
+
+
+
+// Type in input and convert text in binary and display
+//TODO 1. add eventlistener to input
+//TODO 2. convert text-string into binary
+//TODO 3. insert text in html to display it
+const input = document.getElementById('name')
+function convert(input) {
+  let output = "";
+  for (var i = 0; i < input.length; i++) {
+    output += input[i].charCodeAt(0).toString(2) + " ";
+  }
+  return output
 }
-console.log(power(2,8))
+const handleKeyDownEvent = (e) => {
+  const headline = document.getElementById("headline")
+  headline.innerHTML = "Hello my name is " + convert(e.target.value)
+}
+input.addEventListener("keyup", handleKeyDownEvent)
