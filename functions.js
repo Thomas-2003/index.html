@@ -32,3 +32,11 @@ const handleKeyDownEvent = (e) => {
   headline.innerHTML = "Hello my name is " + convert(e.target.value)
 }
 input.addEventListener("keyup", handleKeyDownEvent)
+
+const seaerch = document.getElementById('search')
+seaerch.addEventListener("keyup", (e) => {
+  const searchtext = document.getElementById('searchtext').innerText
+  var positionInText = searchtext.toLowerCase().indexOf(e.target.value.toLowerCase())
+  document.getElementById('searchtext').innerHTML = searchtext.replace(e.target.value, "<b>" + e.target.value + "</b>")
+
+})
