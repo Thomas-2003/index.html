@@ -40,3 +40,21 @@ seaerch.addEventListener("keyup", (e) => {
   document.getElementById('searchtext').innerHTML = searchtext.replace(e.target.value, "<b>" + e.target.value + "</b>")
 
 })
+
+const trs = document.querySelectorAll(".table tr")
+const filter_age = document.getElementById("filter_age")
+//TODO 1. add eventlistener to button
+//TDOD 2. select all table rows <tr> filter by condition
+//TODO 3. hide all elements that dont fit the condition diplay: none
+filter_age.addEventListener("click", (e) => { //add click eventlister, receives event (e)
+  Array.from(trs).map(tr => { // trs is actually a nodelist not a real array, with Array.from() we change it to be a real array which has .map  existing on it
+    if (tr.querySelectorAll('td').length > 0) { // check if we actually have an element which we can work on. You cannot perform .innerText on undefined
+      const age = tr.querySelectorAll('td')[2].innerText // read the actual value of the item
+      if (age < 18) {
+        console.log("Age: " + age);
+        tr.style.display = "none" //hide the elemnt with a css property
+      }
+    }
+  })
+})
+
