@@ -12,7 +12,10 @@
 // }
 // console.log(power(2,8))
 
-
+const sum = (x, y, z = 0) => {
+  console.log(x + y + z)
+}
+sum(3, 1)
 
 
 // Type in input and convert text in binary and display
@@ -37,7 +40,7 @@ const seaerch = document.getElementById('search')
 seaerch.addEventListener("keyup", (e) => {
   const searchtext = document.getElementById('searchtext').innerText
   var positionInText = searchtext.toLowerCase().indexOf(e.target.value.toLowerCase())
-  document.getElementById('searchtext').innerHTML = searchtext.replace(e.target.value, "<b>" + e.target.value + "</b>")
+  document.getElementById('searchtext').innerHTML = searchtext.replace(e.target.value.trim(), "<b>" + e.target.value.trim() + "</b>")
 
 })
 
