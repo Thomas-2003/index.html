@@ -61,3 +61,8 @@ filter_age.addEventListener("click", (e) => { //add click eventlister, receives 
   })
 })
 
+
+const sortButton = document.getElementById('sort_name').addEventListener("click", (e) => {
+  console.log(e)
+
+})
