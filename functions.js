@@ -60,4 +60,7 @@ filter_age.addEventListener("click", (e) => { //add click eventlister, receives 
     }
   })
 })
-
+const resetButton = document.getElementById("reset")
+resetButton.addEventListener("click", (e) => {
+  console.log(e)
+})
