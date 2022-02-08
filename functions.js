@@ -60,9 +60,31 @@ filter_age.addEventListener("click", (e) => { //add click eventlister, receives 
     }
   })
 })
+
+const sortButton = document.getElementById('sort_loggedin').addEventListener("click", (e) => {
+  let stack = []
+  let notLoggedInPeople = []
+  Array.from(trs).map(tr => {
+    const tdsToFilter = tr.querySelectorAll('td')
+    if (tdsToFilter.length > 0) {
+      if (tdsToFilter[1].innerText === "true") {
+        stack.push(tr)
+      } else {
+        notLoggedInPeople.push(tr)
+      }
+    }
+  })
+  const sortedPeople = stack.concat(notLoggedInPeople)
+  document.querySelector(".table tbody").innerHTML = ""
+  sortedPeople.map(tr => {
+    document.querySelector(".table tbody").appendChild(tr)
+  })
+})
+
 const resetButton = document.getElementById("reset")
 resetButton.addEventListener("click", (e) => {
   Array.from(trs).map(tr => {
     tr.style.display = null
   })
 })
+
