@@ -12,10 +12,10 @@
 // }
 // console.log(power(2,8))
 
-const sum = (x, y, z = 0) => {
-  console.log(x + y + z)
-}
-sum(3, 1)
+// const sum = (x, y, z = 0) => { //z is default argument
+//   console.log(x + y + z)
+// }
+// sum(3, 1)
 
 
 // Type in input and convert text in binary and display
