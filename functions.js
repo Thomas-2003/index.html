@@ -61,7 +61,6 @@ filter_age.addEventListener("click", (e) => { //add click eventlister, receives 
   })
 })
 
-
 const sortButton = document.getElementById('sort_loggedin').addEventListener("click", (e) => {
   let stack = []
   let notLoggedInPeople = []
@@ -81,3 +80,11 @@ const sortButton = document.getElementById('sort_loggedin').addEventListener("cl
     document.querySelector(".table tbody").appendChild(tr)
   })
 })
+
+const resetButton = document.getElementById("reset")
+resetButton.addEventListener("click", (e) => {
+  Array.from(trs).map(tr => {
+    tr.style.display = null
+  })
+})
+
